@@ -17,6 +17,21 @@ $bulan = [
     "Desember",
 ];
 ?>
+<style>
+.print-only{
+    display: none;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    .print-only{
+        display: block;
+    }
+}
+</style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -43,9 +58,14 @@ $bulan = [
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Hasil Prediksi</h3>
+                <br>
+                <button class="btn btn-success no-print" onclick="window.print()"><i class="fa fa-print"></i> Cetak</button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <center>
+                  <h2 class="print-only">LAPORAN HASIL PREDIKSI</h2>
+                </center>
                 <table class="table table-bordered">
                   <tr>
                     <td>#</td>

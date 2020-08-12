@@ -15,7 +15,7 @@ class TrendController
 
 	function index()
 	{
-		$trend = $this->trend->orderby('tahun','asc')->orderby('bulan','asc')->get();
+		$trend = $this->trend->orderby('tahun','asc, bulan asc')->get();
 		return view('trend.index',[
 			'trend' => $trend
 		]);
@@ -67,7 +67,7 @@ class TrendController
 
 	function hasil()
 	{
-		$trend = $this->trend->orderby('tahun','asc')->orderby('bulan','asc')->get();
+		$trend = $this->trend->orderby('tahun','asc, bulan asc')->get();
 		return view('trend.hasil',[
 			'trend' => $trend
 		]);
