@@ -112,7 +112,8 @@ $bulan = [
 
                       array_shift($last_aktual);
                       $mad = abs($value->jumlah-$forecasting);
-                      $mse = ($value->jumlah-$forecasting)^2;
+                      $mse = ($value->jumlah-$forecasting);
+                      $mse = $mse*$mse;
                       $mape = $mad/$value->jumlah*100;
                       $mape = round($mape,1);
 
