@@ -99,7 +99,7 @@ $bulan = [
                     $mse = 0;
                     if($n > 3)
                     {
-                      $bobot = [3,2,1];
+                      $bobot = [1,2,3];
                       $total_bobot = 0;
                       $forecasting = 0;
                       foreach($last_aktual as $k => $v)
