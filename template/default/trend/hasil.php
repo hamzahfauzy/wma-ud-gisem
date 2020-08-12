@@ -144,10 +144,11 @@ $bulan = [
                     $total_bobot += $bobot[$k];
                   }
 
+                  $div_total = count($trend) - 3;
                   $forecasting = round($forecasting / $total_bobot, 1);
-                  $total_mad = round($total_mad / 3, 1);
-                  $total_mape = round($total_mape / 3, 1);
-                  $total_mse = round($total_mse / 3, 1);
+                  $total_mad = round($total_mad / $div_total, 1);
+                  $total_mape = round($total_mape / $div_total, 1);
+                  $total_mse = round($total_mse / $div_total, 1);
                   ?>
                   <tr>
                     <td><b>Periode Selanjutnya</b></td>
