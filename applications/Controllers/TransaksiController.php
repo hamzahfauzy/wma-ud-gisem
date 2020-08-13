@@ -71,4 +71,41 @@ class TransaksiController
 		}
 		return view('transaksi.tambah');
 	}
+
+	function edit($id)
+	{
+		$request = request()->post();
+		$transaksi = $this->transaksi->find($id);
+		if($request)
+		{
+			// $transaksi->jumlah = $request->jumlah;
+			$transaksi->save([
+				'jumlah' => $request->jumlah
+			]);
+
+			session()->set('success','Transaksi Berhasil di edit');
+			redirect('/transaksi');
+			return;
+		}
+		return view('transaksi.edit',[
+			'transaksi' => $transaksi
+		]);
+	}
+
+	function cetak($id)
+	{
+		$request = request()->post();
+		$transaksi = $this->transaksi->find($id);
+		return partial('transaksi.cetak',[
+			'transaksi' => $transaksi
+		]);
+	}
+
+	function hapus($id)
+	{
+		$this->transaksi->delete($id);
+		session()->set('success','Transaksi Berhasil di hapus');
+		redirect('/transaksi');
+		return;
+	}
 }

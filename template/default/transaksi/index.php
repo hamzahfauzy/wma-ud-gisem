@@ -43,6 +43,7 @@ $this->visited = "transaksi";
                     <td>Jumlah</td>
                     <td>Tanggal</td>
                     <td>Cetak</td>
+                    <td>Aksi</td>
                   </tr>
                   <?php if(empty($transaksi)): ?>
                   <tr>
@@ -57,6 +58,10 @@ $this->visited = "transaksi";
                     <td><?=$value->tanggal?></td>
                     <td>
                       <a class="btn btn-primary" href="<?=base_url()?>/transaksi/cetak/<?=$value->id?>"><i class="fa fa-print fa-fw"></i> Cetak Kwitansi</a>
+                    </td>
+                    <td>
+                      <a href="<?=base_url()?>/transaksi/edit/<?=$value->id?>" class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Edit</a>
+                      <a href="<?=base_url()?>/transaksi/hapus/<?=$value->id?>" class="btn btn-warning"><i class="fa fa-trash"></i> Hapus</a>
                     </td>
                   </tr>
                   <?php endforeach ?>
