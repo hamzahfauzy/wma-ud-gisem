@@ -52,7 +52,7 @@
             <a href="<?=base_url()?>/trend" class="nav-link <?=$this->visited == "trend" ? "active" : "" ?>">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Trend Data Penjualan
+                Data Penjualan
               </p>
             </a>
           </li>

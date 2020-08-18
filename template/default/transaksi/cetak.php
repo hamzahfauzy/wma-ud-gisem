@@ -17,21 +17,17 @@
     <tr>
       <td>No</td>
       <td>Jumlah</td>
+      <td>Harga</td>
       <td>Sub Total</td>
     </tr>
     <tr>
       <td>1</td>
       <td><?=$transaksi->jumlah?></td>
-      <td>Rp. <?=number_format($transaksi->jumlah*310)?></td>
+      <td>Rp. 310,-</td>
+      <td>Rp. <?=number_format($transaksi->jumlah*310)?>,-</td>
     </tr>
-    <?php for($i=0;$i<4;$i++): ?>
     <tr>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <?php endfor ?>
-    <tr>
       <td>&nbsp;</td>
       <td><b>Total</b></td>
       <td>Rp. <?=number_format($transaksi->jumlah*310)?></td>

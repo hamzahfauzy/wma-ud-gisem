@@ -68,14 +68,14 @@ $bulan = [
                 </center>
                 <table class="table table-bordered">
                   <tr>
-                    <td>#</td>
-                    <td>Bulan</td>
-                    <td>Tahun</td>
-                    <td>Jumlah</td>
-                    <td>Forecasting</td>
-                    <td>MAD</td>
-                    <td>MSE</td>
-                    <td>MAPE</td>
+                    <th style="text-align: center;vertical-align: middle;">No.</th>
+                    <th style="text-align: center;vertical-align: middle;">Bulan</th>
+                    <th style="text-align: center;vertical-align: middle;">Tahun</th>
+                    <th style="text-align: center;vertical-align: middle;">Jumlah</th>
+                    <th style="text-align: center;vertical-align: middle;">Forecasting (Peramalan)</th>
+                    <th style="text-align: center;vertical-align: middle;">MAD <br>(Nilai Mutlak)</th>
+                    <th style="text-align: center;vertical-align: middle;">MSE <br>(Kuadrat Nilai Mutlak)</th>
+                    <th style="text-align: center;vertical-align: middle;">MAPE <br>(Rata-Rata Kesalahan)</th>
                   </tr>
                   <?php if(empty($trend)): ?>
                   <tr>

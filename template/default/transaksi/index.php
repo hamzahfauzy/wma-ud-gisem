@@ -38,7 +38,7 @@ $this->visited = "transaksi";
                 <p></p>
                 <table class="table table-bordered">
                   <tr>
-                    <td>#</td>
+                    <td>No.</td>
                     <td>Pelanggan</td>
                     <td>Jumlah</td>
                     <td>Tanggal</td>

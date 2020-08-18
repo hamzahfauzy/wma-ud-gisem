@@ -53,7 +53,7 @@ $bulan = [
                 <p></p>
                 <table class="table table-bordered">
                   <tr>
-                    <td>#</td>
+                    <td>No.</td>
                     <td>Bulan</td>
                     <td>Tahun</td>
                     <td>Jumlah</td>

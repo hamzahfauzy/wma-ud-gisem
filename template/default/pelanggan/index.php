@@ -33,7 +33,7 @@ $this->visited = "pelanggan";
               <div class="card-body">
                 <table class="table table-bordered">
                   <tr>
-                    <td width="20px">#</td>
+                    <td width="20px">No.</td>
                     <td>Pelanggan</td>
                   </tr>
                   <?php if(empty($pelanggan)): ?>
