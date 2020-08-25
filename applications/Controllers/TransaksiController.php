@@ -42,9 +42,18 @@ class TransaksiController
 				'tanggal'      => date('Y-m-d H:i:s')
 			]);
 
-			$stok = $this->stok->orderby('tanggal','desc')->first();
-			$stok->save([
-				'jumlah' => $stok->jumlah - $request->jumlah
+			$current_stok = $this->stok->orderby('tanggal','desc')->first();
+			$sisa = 0;
+			if(!empty($current_stok))
+				$sisa = $current_stok->sisa;
+			// $stok->save([
+			// 	'jumlah' => $stok->jumlah - $request->jumlah
+			// ]);
+			$stok = $this->stok->save([
+				'jumlah' => $request->jumlah,
+				'sisa'   => $sisa-$request->jumlah,
+				'keterangan' => 'pengurangan stok',
+				'tanggal' => date('Y-m-d H:i:s')
 			]);
 
 			$trend = Trend::where('bulan',date('m'))->where('tahun',date('Y'))->first();

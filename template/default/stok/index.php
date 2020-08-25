@@ -9,7 +9,7 @@ $this->visited = "stok";
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Stok Batu</h1>
+            <h1>Stok Batu (Sisa: <?= empty($stok) ? 0 : $stok[0]->sisa ?>)</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -31,18 +31,34 @@ $this->visited = "stok";
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form method="post" class="col-lg-6 col-12">
-                  <?php if(session()->get('success')): ?>
-                  <div class="alert alert-success"><?=session()->get('success')?></div>
-                  <?php session()->reset('success'); endif ?>
-                  <div class="form-group">
-                    <label>Jumlah</label>
-                    <input type="number" class="form-control" name="jumlah" value="<?= $stok->jumlah ? $stok->jumlah : 0?>">
-                  </div>
-                  <div class="form-group">
-                    <button class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
-                  </div>
-                </form>
+                <?php if(session()->get('success')): ?>
+                <div class="alert alert-success"><?=session()->get('success')?></div>
+                <?php session()->reset('success'); endif ?>
+                <a href="<?=base_url()?>/stok/tambah" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Data</a>
+                <p></p>
+                <table class="table table-bordered">
+                  <tr>
+                    <td>No.</td>
+                    <td>Jumlah</td>
+                    <td>Sisa</td>
+                    <td>Keterangan</td>
+                    <td>Tanggal</td>
+                  </tr>
+                  <?php if(empty($stok)): ?>
+                  <tr>
+                    <td colspan="5"><i>Tidak ada data</i></td>
+                  </tr>
+                  <?php endif ?>
+                  <?php foreach($stok as $key => $value): ?>
+                  <tr>
+                    <td><?=++$key?></td>
+                    <td><?=$value->jumlah?></td>
+                    <td><?=$value->sisa?></td>
+                    <td><?=$value->keterangan?></td>
+                    <td><?=$value->tanggal?></td>
+                  </tr>
+                  <?php endforeach ?>
+                </table>
               </div>
               <!-- /.card-body -->
             </div>

@@ -46,7 +46,7 @@ $this->visited = "home";
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><?=$stok->jumlah?></h3>
+                <h3><?=$stok->sisa?></h3>
 
                 <p>Data Stok</p>
               </div>
